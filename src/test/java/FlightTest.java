@@ -16,9 +16,9 @@ public class FlightTest {
     @Before
 
     public void before(){
-        passenger1 = new Passenger("Scotty",1);
-        passenger2 = new Passenger("Alzo",2);
-        passenger3 = new Passenger("Seth", 4);
+        passenger1 = new Passenger("Scotty",1, "None");
+        passenger2 = new Passenger("Alzo",2,"None");
+        passenger3 = new Passenger("Seth", 4,"None");
         plane = new Plane(PlaneType.CESSNA172);
         plane2 = new Plane(PlaneType.AIRBUS300);
         flight1 = new Flight(plane, "G23I", "London", "Glasgow","10:00");

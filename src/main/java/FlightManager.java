@@ -22,6 +22,7 @@ public class FlightManager {
     public void addPassengerToFlight( Passenger passenger) {
         Flight chosenFlight = this.flight;
         chosenFlight.bookSeat(passenger);
+
     }
 
     public int storageCapacity() {

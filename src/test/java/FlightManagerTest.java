@@ -14,8 +14,8 @@ public class FlightManagerTest {
     @Before
     public void before(){
         plane = new Plane(PlaneType.CESSNA172);
-        passenger1 = new Passenger("Scotty", 1);
-        passenger2 = new Passenger("Alzo", 2);
+        passenger1 = new Passenger("Scotty", 1, "none");
+        passenger2 = new Passenger("Alzo", 2, "none");
         flight = new Flight(plane, "G23I", "London", "Glasgow","10:00");
         flightManager= new FlightManager(flight);
     }
@@ -54,5 +54,17 @@ public class FlightManagerTest {
         flightManager.addPassengerToFlight(passenger1);
         flightManager.addPassengerToFlight(passenger2);
         assertEquals(4.0, flightManager.checkBagageStorageRemainingOnFlight(flight),1.00);
+    }
+
+    @Test
+    public void canAddFlightNumberToPassenger() {
+        flightManager.addPassengerToFlight(passenger1);
+        assertEquals("G23I", passenger1.getFlight());
+    }
+
+    @Test
+    public void canAddSeatNumberToPassenger() {
+        flightManager.addPassengerToFlight(passenger1);
+        assertEquals(1, passenger1.countSeatnumber());
     }
 }
